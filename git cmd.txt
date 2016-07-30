@@ -7,3 +7,5 @@ git checkout .
 1、终端进入项目文件夹
 2、输入命令并执行：git checkout 文件路径（包含文件名称）
 此时该文件已恢复成未修改前状态
+
+3.undo all change: git clean -fdx
