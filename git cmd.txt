@@ -9,3 +9,6 @@ git checkout .
 此时该文件已恢复成未修改前状态
 
 3.undo all change: git clean -fdx
+4.check out a existed branch: git checkout your-branch-name
+5.check out and create branch: git chekout -b your-branch-name
+6.
