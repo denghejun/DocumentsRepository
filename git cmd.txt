@@ -9,7 +9,7 @@
 （2）执行了(git add .或git commit)的所有操作（增/删/改）的Undo：
      a.undo到本地前一次commit的结果：git reset --hard
      b.undo到Server端最后一次commit的结果：git reset --hard @{u}
-
+所以，一般情况下若要完全undo所有操作，需要连续执行以下2条cmd：git clean -fdx | git reset --hard @{u}.就可以恢复到git服务器版本。
 
 3.check out
 (1) 切换到一个已经存在的分支: git checkout your-branch-name
