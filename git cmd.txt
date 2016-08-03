@@ -4,11 +4,14 @@ git checkout App1/a.php
 当前目录
 git checkout .
 
-1、终端进入项目文件夹
-2、输入命令并执行：git checkout 文件路径（包含文件名称）
-此时该文件已恢复成未修改前状态
+2. Undo操作
+（1）还未执行(git add .)的新增文件操作Undo：git clean -fdx (注意：修改文件和删除文件将不会被undo)
+（2）执行了(git add .或git commit)的所有操作（增/删/改）的Undo：
+     a.undo到本地前一次commit的结果：git reset --hard
+     b.undo到Server端最后一次commit的结果：git reset --hard @{u}
 
-3.undo all change: git clean -fdx
-4.check out a existed branch: git checkout your-branch-name
-5.check out and create branch: git chekout -b your-branch-name
-6.
+
+3.check out
+(1) 切换到一个已经存在的分支: git checkout your-branch-name
+(2) 创建一个不存在的分支并切换到该分支: git chekout -b your-branch-name
+
