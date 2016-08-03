@@ -13,7 +13,7 @@
      c.undo到Server端最后一次commit的结果：git reset --hard @{u}
      （注：此命令执行时，有可能Server端已经被其他人push过了，但它不会主动undo到最新的版本，所以，理论上讲，该命令会undo到本地
      最后一次成功push的版本，这个原理其实跟大多数源码管理工具如：svn、VSTS等是一样的，undo操作并不会执行git newest操作。）
-所以，一般情况下若要完全undo所有操作，需要连续执行以下2条cmd：git clean -fdx | git reset --hard @{u}.就可以恢复到git服务器版本。
+所以，一般情况下若为了确保完全undo所有操作，需要连续执行以下2条cmd：git clean -fdx | git reset --hard @{u}.就可以恢复到git服务器版本。
 
 3.check out
 (1) 切换到一个已经存在的分支: git checkout your-branch-name
