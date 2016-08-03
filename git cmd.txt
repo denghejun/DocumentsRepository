@@ -1,8 +1,8 @@
 1. 当本地误删除了某文件时：
-单个文件
-git checkout App1/a.php
-当前目录
-git checkout .
+（1）单个文件
+     git checkout App1/a.php
+（2）当前目录所有文件
+     git checkout .
 
 2. Undo操作
 （1）还未执行(git add .)的新增文件操作Undo：git clean -fdx (注意：修改文件和删除文件将不会被undo)
