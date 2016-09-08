@@ -1,3 +1,4 @@
+推荐使用Git bash：最好的Git CLI
 1. 当本地误删除了某文件时：
 （1）单个文件
      git checkout App1/a.php
@@ -24,3 +25,4 @@
 当执行push推送时，若发现server端的文件与本地不是最新的时，将会push失败，此时执行：git pull拉取最新的server端版本后方可成功。
 
 5.如果git commit了多次，但是都还没有push，这时输入：git push即可全部push，而使用git push origin master则报错。
+6.有一次我git的密码修改了，我是执行这个命令：git config --global credential.helper，之后，就会在push时，重新输入密码了
