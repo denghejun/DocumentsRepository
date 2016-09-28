@@ -16,6 +16,12 @@
 ###### check out
 * 切换到一个已经存在的分支: git checkout your-branch-name
 * 创建一个不存在的分支并切换到该分支: git chekout -b your-branch-name
+* 分支重命名：
+```
+git branch -m old_branch new_branch         # Rename branch locally    
+git push origin :old_branch                 # Delete the old branch    
+git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
+```
 
 
 ###### push & pull
