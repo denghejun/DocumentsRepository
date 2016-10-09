@@ -49,7 +49,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
      * `Ctrl+Shift+P`，然后输入select project，回车后即可看到root目录下所有的projects（project.json）
      * 在编辑器的右下角，有一个`火焰`一样的图标，点击它即可切换
      
-* .NET Core项目，当需要调式程序时，设置launch.json文件，如下(program属性指向了需要调试的程序)：
+* .NET Core项目，当需要调式程序时，设置`launch.json`文件，如下(program属性指向了需要调试的程序)：
 ```
 {
     "version": "0.2.0",
@@ -77,7 +77,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ```
 
 
-* 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不再root目录下，则需按以下形式在task.json文件中指定：
+* 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不在root目录下，则需按以下形式在`task.json`文件中指定：
 ```
 {
     "version": "0.1.0",
