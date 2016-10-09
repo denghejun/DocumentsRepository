@@ -1,4 +1,4 @@
-## Git bash
+## Git (bash)
 ######当本地误删除了某文件时
 * 单个文件
      git checkout App1/a.php
