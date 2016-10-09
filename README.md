@@ -77,7 +77,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ```
 
 
-* 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不在root目录下，则需按以下形式在`task.json`文件中指定：
+* 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不在`${workspaceRoot}`目录下，则需按以下形式在`task.json`文件中指定：
 ```
 {
     "version": "0.1.0",
