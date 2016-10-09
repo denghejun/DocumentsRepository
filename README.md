@@ -42,3 +42,57 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
      </config>
 </configuration>
 ```
+
+## VS Code
+* 为了让程序编写时智能感知能够正常（比如按下`Ctrl+.`后能够提示`using`），或调试时监控变量更详细，最好将Current Project切换到你工作的项目下，有2种方式
+
+     * `Ctrl+Shift+P`，然后输入select project，回车后即可看到root目录下所有的projects（project.json）
+     * 在编辑器的右下角，有一个`火焰`一样的图标，点击它即可切换
+     
+* .NET Core项目，当需要调式程序时，设置launch.json文件，如下(program属性指向了需要调试的程序)：
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/implement/bin/Debug/netcoreapp1.0/win10-x64/implement.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "externalConsole": false,
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command.pickProcess}"
+        }
+    ]
+}
+```
+
+
+* 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不再root目录下，则需按以下形式在task.json文件中指定：
+```
+{
+    "version": "0.1.0",
+    "command": "dotnet",
+    "isShellCommand": true,
+    "args": [],
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [
+                "${workspaceRoot}/implement"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
+```
