@@ -44,11 +44,13 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ```
 
 ## VS Code
+###### switch project
 * 为了让程序编写时智能感知能够正常（比如按下`Ctrl+.`后能够提示`using`），或调试时监控变量更详细，最好将Current Project切换到你工作的项目下，有2种方式
 
      * `Ctrl+Shift+P`，然后输入select project，回车后即可看到root目录下所有的projects（project.json）
      * 在编辑器的右下角，有一个`火焰`一样的图标，点击它即可切换
-     
+
+###### debug
 * .NET Core项目，当需要调式程序时，设置`launch.json`文件，如下(program属性指向了需要调试的程序)：
 ```
 {
@@ -75,7 +77,6 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
     ]
 }
 ```
-
 
 * 调试程序启动前，一般需要执行build task，若需要调试的project(project.json)不在`${workspaceRoot}`目录下，则需按以下形式在`task.json`文件中指定：
 ```
