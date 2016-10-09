@@ -30,6 +30,9 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 * 如果git commit了多次，但是都还没有push，这时输入：git push即可全部push，而使用git push origin master则报错。
 * 有一次我git的密码修改了，我是执行这个命令：git config --global credential.helper，之后，就会在push时，重新输入密码了
 
+###### auto complete
+* 在`terminal`中当输入不完整的名词时，按下`Tab`键，将会自动补全；最长用的场景就是操作那些较长的分支名称。
+
 ## NuGet
 ###### proxy setting
 * 当你所处的开发环境需要用代理上网时，需要设置代理，Nuget才能正常Restore一些Package，打开 `%appdata%\NuGet`(一般类似C:\Users\ld71\AppData\Roaming\NuGet，%appdata%是环境变量，指向Users\{userName}\AppData\Roaming),添加以下设置(具体值按需设置)：
