@@ -45,6 +45,11 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
      </config>
 </configuration>
 ```
+* 打包一个`.csproj`分四步（在`.csproj`文件目录下进行）
+     * `nuget spec`: 生成`xxx.spec`文件
+     * 修改`xxx.spec`文件中的必要信息，如Author、ReleaseNotes等，版本号在Pack会自动替换
+     * `nuget pack xxx.csproj  -IncludeReferencedProjects`： 生成`xxx.1.0.0.x.nupkg`文件；`-IncludeReferencedProjects`参数指示包含该项目所有的依赖项目（比如xxx.csproj依赖了yyy.dll，package在上传时会包含它）
+     * `nuget push xxx.1.0.0.x.nupkg -s "http://10.16.76.251:9999/NugetServer/" "Newegg.Shipping.NugetServer"`: push Package; 
 
 ## VS Code
 ###### switch project
