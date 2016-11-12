@@ -45,6 +45,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
      </config>
 </configuration>
 ```
+###### Pack Package
 * 打包一个`.csproj`分四步（在`.csproj`文件目录下进行）
 
     * `nuget spec`: 生成`xxx.spec`文件
