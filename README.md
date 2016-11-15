@@ -48,7 +48,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ###### pack package
 打包并上传一个`.csproj`的Nuget包分四步（在`.csproj`文件目录下进行）
 
-* `nuget spec`: 生成`xxx.spec`文件
+* `nuget spec`: 生成`xxx.spec`文件(这一步一般意义只需执行一次，之后就修改些内容就可以了，比如ReleaseNotes)
 
 * 修改`xxx.spec`文件中的必要信息，如Author、ReleaseNotes等，版本号在Pack会自动替换
 
