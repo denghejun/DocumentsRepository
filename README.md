@@ -57,7 +57,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 * `nuget push xxx.1.0.0.x.nupkg -s "http://10.16.76.251:9999/NugetServer/" "Newegg.Shipping.NugetServer"`: push Package; 
 
 ###### pack files
-一般来讲，若上传的Package依赖使用方的一些配置文件（如app.config）则需要将文件名后追加`.transform`（如app.config.transform），然后在`.nuspec`文件中添加对应`files`节点(注意：是直接在`<package>`节点下)：
+一般来讲，若上传的Package依赖使用方的一些配置文件（如app.config且只应该包含仅需的部分，在Install Package时若文件已存在会自动合并）则需要将文件名后追加`.transform`（如app.config.transform），然后在`.nuspec`文件中添加对应`files`节点(注意：是直接在`<package>`节点下)：
 ```
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
