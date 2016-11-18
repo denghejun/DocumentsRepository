@@ -63,7 +63,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <files>
      <!--src: 文件在当前项目的相对位置；-->
-     <!--target: 文件在打包好的Package内的相对位置，在Install时会忽略前面的'content'文件夹而按后面的目录Install到目标项目-->
+     <!--target: 文件在打包好的Package内的相对位置(Package Install时会将'content'文件夹下的所有目录和文件直接Install到目标项目)-->
      <file src="Configuration\Database.config.transform" target="content\Configuration\" />
 	<file src="Configuration\App.config.transform" target="content\" />
   </files>
