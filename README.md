@@ -48,13 +48,27 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ###### pack package
 打包并上传一个`.csproj`的Nuget包分四步（在`.csproj`文件目录下进行）
 
-* `nuget spec`: 生成`xxx.spec`文件(这一步一般意义只需执行一次，之后就修改些内容就可以了，比如ReleaseNotes)
+* `nuget spec`: 生成`xxx.nuspec`文件(这一步一般意义只需执行一次，之后就修改些内容就可以了，比如ReleaseNotes)
 
-* 修改`xxx.spec`文件中的必要信息，如Author、ReleaseNotes等，版本号在Pack会自动替换
+* 修改`xxx.nuspec`文件中的必要信息，如Author、ReleaseNotes等，版本号在Pack会自动替换
 
 * `nuget pack xxx.csproj  -IncludeReferencedProjects`： 生成`xxx.1.0.0.x.nupkg`文件；`-IncludeReferencedProjects`参数指示包含该项目所有 的依赖项目（比如xxx.csproj依赖了yyy.dll，package在上传时会包含它），但一般若我们的项目对外的依赖都通过Nueget来管理，所以这个参数基本不会使        用，Nuget会在Install时自动解析依赖。除非我们有本地的dll，而又不能或不想使用Nuget来管理的话就适用该参数。
 
 * `nuget push xxx.1.0.0.x.nupkg -s "http://10.16.76.251:9999/NugetServer/" "Newegg.Shipping.NugetServer"`: push Package; 
+
+###### pack files
+一般来讲，若上传的Package依赖使用方的一些配置文件（如app.config）则需要将文件名后追加`.transform`（如app.config.transform），然后在`.nuspec`文件中添加对应`files`节点(注意：是直接在`<package>`节点下)：
+```
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <files>
+     <!--src: 文件在当前项目的相对位置；-->
+     <!--target: 文件在打包好的Package内的相对位置，在Install时会忽略前面的'content'文件夹而按后面的目录Install到目标项目-->
+     <file src="Configuration\Database.config.transform" target="content\Configuration\" />
+	<file src="Configuration\App.config.transform" target="content\" />
+  </files>
+</package>
+```
 
 ## VS Code
 ###### switch project
