@@ -124,3 +124,8 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
     ]
 }
 ```
+## C#
+###### stop abstract/virtual
+`C#`中的`sealed`关键字有两种用途
+* 用于`class`，将类`密封`，将不可被继承；
+* 用于`abstract/virtual`的`Method`，该方法将会在当前实现类中`override`后，终止可重载/写的特性。
